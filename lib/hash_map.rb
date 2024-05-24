@@ -80,6 +80,10 @@ class HashMap
     load
   end
 
+  def clear
+    initialize
+  end
+
   private
 
   attr_accessor :capacity, :load, :data
