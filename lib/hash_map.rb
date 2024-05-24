@@ -24,6 +24,7 @@ class HashMap
 
         node = node.next_node
       end
+      self.load += 1
       node.next_node = Node.new(key, value)
     end
   end
