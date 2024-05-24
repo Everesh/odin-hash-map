@@ -60,7 +60,7 @@ class HashMap
 
     if node.key == key
       val = node.value
-      node = node.next_node
+      data[index] = node.next_node
       self.load -= 1
       return val
     end
