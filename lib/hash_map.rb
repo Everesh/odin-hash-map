@@ -1,3 +1,5 @@
+require_relative 'node'
+
 class HashMap
   PRIME = 53
 
