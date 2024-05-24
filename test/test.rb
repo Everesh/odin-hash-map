@@ -66,6 +66,15 @@ rescue
   puts 'Something went wrong getting keys'
 end
 
+begin
+  values = hash.values
+  ['woof', 'nya', 3, 4, 6, 8, 9, 10, 11, 12, 13, 14].each do |item|
+    raise Error unless values.include?(item)
+  end
+rescue
+  puts 'Something went wrong getting values'
+end
+
 # Preped all future test here
 
 begin
