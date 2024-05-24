@@ -50,3 +50,9 @@ begin
 rescue
   puts 'Something went wrong removing from the hash ;.;'
 end
+
+begin
+  raise Error unless hash.length == 11
+rescue
+  puts 'Fetching length went wrong... HOW?!?'
+end
