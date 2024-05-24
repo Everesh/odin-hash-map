@@ -15,3 +15,11 @@ begin
 rescue
   puts 'Something went wrong updating existing keys'
 end
+
+begin
+  raise Error unless hash.get('dog') == 'woof'
+  raise Error unless hash.get('cat') == 'nya'
+  raise Error unless hash.get('bird').nil?
+rescue
+  puts 'Something went wrong getting values from keys'
+end
