@@ -75,6 +75,16 @@ rescue
   puts 'Something went wrong getting values'
 end
 
+begin
+  entries = hash.entries
+  [['dog','woof'], ['cat','nya'], [3, 3], [4, 4], [6, 6], [8, 8], [9, 9], [10, 10], [11, 11], [12, 12], [13, 13], [14, 14]].each do |item|
+    raise Error unless entries.include?(item)
+  end
+rescue
+  puts 'Something went wrong getting entries'
+end
+
+
 # Preped all future test here
 
 begin
