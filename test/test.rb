@@ -60,7 +60,7 @@ end
 begin
   keys = hash.keys
   ['dog', 'cat', 3, 4, 6, 8, 9, 10, 11, 12, 13, 14].each do |item|
-    raise Error unless keys.contain?(item)
+    raise Error unless keys.include?(item)
   end
 rescue
   puts 'Something went wrong getting keys'
