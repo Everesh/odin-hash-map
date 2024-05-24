@@ -56,3 +56,11 @@ begin
 rescue
   puts 'Fetching length went wrong... HOW?!?'
 end
+
+begin
+  hash.clear
+  raise Error unless hash.length.zero?
+  raise Error if hash.has?('cat')
+rescue
+  puts 'Clear failed!'
+end
