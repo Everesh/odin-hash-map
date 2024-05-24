@@ -52,7 +52,7 @@ rescue
 end
 
 begin
-  raise Error unless hash.length == 11
+  raise Error unless hash.length == 12
 rescue
   puts 'Fetching length went wrong... HOW?!?'
 end

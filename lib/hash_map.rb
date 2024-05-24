@@ -12,6 +12,7 @@ class HashMap
   def set(key, value)
     index = hash(key) % capacity
     if data[index].nil?
+      self.load += 1
       data[index] = Node.new(key, value)
     else
       node = data[index]
@@ -55,6 +56,8 @@ class HashMap
   def remove(key)
     index = hash(key) % capacity
     node = data[index]
+    return nil if node.nil?
+
     if node.key == key
       val = node.value
       node = node.next_node
@@ -73,6 +76,10 @@ class HashMap
     nil
   end
 
+  def length
+    load
+  end
+
   private
 
   attr_accessor :capacity, :load, :data
@@ -87,6 +94,7 @@ class HashMap
     old_data = data.dup
     self.capacity = capacity * 2
     self.data = Array.new(capacity)
+    self.load = 0
     old_data.each do |node|
       until node.nil?
         set(node.key, node.value)
