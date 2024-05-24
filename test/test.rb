@@ -31,3 +31,10 @@ begin
 rescue
   puts 'Something went wrong checking for existance of keys'
 end
+
+begin
+  # lets force the hash to resize
+  16.times { |num| hash.set(num, num) }
+rescue
+  puts 'Oh nyooo, resizing went BOOOOOM! ;.;'
+end
