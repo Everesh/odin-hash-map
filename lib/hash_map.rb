@@ -28,6 +28,17 @@ class HashMap
     end
   end
 
+  def get(key)
+    index = hash(key) % capacity
+    node = data[index]
+    until node.nil?
+      return node.value if node.key == key
+
+      node = node.next_node
+    end
+    nil
+  end
+
   private
 
   attr_accessor :capacity, :load, :data
