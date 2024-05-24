@@ -23,3 +23,11 @@ begin
 rescue
   puts 'Something went wrong getting values from keys'
 end
+
+begin
+  raise Error unless hash.has?('dog')
+  raise Error unless hash.has?('cat')
+  raise Error if hash.has?('bird')
+rescue
+  puts 'Something went wrong checking for existance of keys'
+end
