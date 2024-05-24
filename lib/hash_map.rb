@@ -95,6 +95,17 @@ class HashMap
     keys
   end
 
+  def values
+    values = []
+    data.each do |node|
+      until node.nil?
+        values << node.value
+        node = node.next_node
+      end
+    end
+    values
+  end
+
   private
 
   attr_accessor :capacity, :load, :data
