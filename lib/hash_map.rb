@@ -26,6 +26,7 @@ class HashMap
       end
       self.load += 1
       node.next_node = Node.new(key, value)
+      resize if load / capacity >= 0.8
     end
   end
 
@@ -59,5 +60,17 @@ class HashMap
     hash_code = 0
     key.each_char { |char| hash_code = (PRIME * hash_code) + char.ord }
     hash_code
+  end
+
+  def resize
+    old_data = data.dup
+    self.capacity = capacity * 2
+    self.data = Array.new(capacity)
+    old_data.each do |node|
+      until node.nil?
+        set(node.key, node.value)
+        node = node.next_node
+      end
+    end
   end
 end
