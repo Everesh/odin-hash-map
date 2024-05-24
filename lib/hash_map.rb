@@ -58,12 +58,14 @@ class HashMap
     if node.key == key
       val = node.value
       node = node.next_node
+      self.load -= 1
       return val
     end
     until node.next_node.nil?
       if node.next_node.key == key
         val = node.next_node.value
         node.next_node = node.next_node.next_node
+        self.load -= 1
         return val
       end
       node = node.next_node
