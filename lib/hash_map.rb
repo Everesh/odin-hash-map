@@ -52,6 +52,25 @@ class HashMap
     false
   end
 
+  def remove(key)
+    index = hash(key) % capacity
+    node = data[index]
+    if node.key == key
+      val = node.value
+      node = node.next_node
+      return val
+    end
+    until node.next_node.nil?
+      if node.next_node.key == key
+        val = node.next_node.value
+        node.next_node = node.next_node.next_node
+        return val
+      end
+      node = node.next_node
+    end
+    nil
+  end
+
   private
 
   attr_accessor :capacity, :load, :data
