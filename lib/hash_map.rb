@@ -40,6 +40,17 @@ class HashMap
     nil
   end
 
+  def has?(key)
+    index = hash(key) % capacity
+    node = data[index]
+    until node.nil?
+      return true if node.key == key
+
+      node = node.next_node
+    end
+    false
+  end
+
   private
 
   attr_accessor :capacity, :load, :data
