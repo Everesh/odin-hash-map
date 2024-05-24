@@ -40,13 +40,13 @@ rescue
 end
 
 begin
-  raise Error unless hash.remove('2') == 2
-  raise Error unless hash.remove('5') == 5
-  raise Error unless hash.remove('7') == 7
-  raise Error unless hash.remove('1') == 1
-  raise Error unless hash.remove('0').zero?
-  raise Error unless hash.remove('15') == 15
-  raise Error unless hash.remove('20').nil?
+  raise Error unless hash.remove(2) == 2
+  raise Error unless hash.remove(5) == 5
+  raise Error unless hash.remove(7) == 7
+  raise Error unless hash.remove(1) == 1
+  raise Error unless hash.remove(0).zero?
+  raise Error unless hash.remove(15) == 15
+  raise Error unless hash.remove(20).nil?
 rescue
   puts 'Something went wrong removing from the hash ;.;'
 end
