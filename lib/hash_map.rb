@@ -4,7 +4,7 @@ class HashMap
   def initialize
     @capacity = 16
     @load = 0
-    @data = []
+    @data = Array.new(16)
   end
 
   private
